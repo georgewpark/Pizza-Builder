@@ -168,9 +168,14 @@ h3 {
     height: 30px;
     border-radius: 5px;
     border: 2px solid var(--blue);
+    background-color: var(--white);
     margin: 0;
     transform: translateY(-50%);
     -webkit-appearance: none;
+}
+
+.topping-input:checked {
+    background-color: var(--white);
 }
 
 .topping-input:checked::after {
