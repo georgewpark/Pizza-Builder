@@ -31,7 +31,7 @@ header {
 }
 
 h1 {
-    font-size: calc(25px + 1.5vw);
+    font-size: calc(18px + 1.5vw);
     font-weight: 700;
     color: var(--white);
     letter-spacing: 0.05em;
