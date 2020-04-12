@@ -73,6 +73,9 @@ class PizzaBuilder extends Component {
         orderConfirmed: false
     }
 
+    confirmOrderBtnRef = React.createRef();
+    closeConfirmationBtnRef = React.createRef();
+
     handleToppingOptionClick = e => {
         if (e.target.className === 'topping-input') {
 
@@ -96,7 +99,15 @@ class PizzaBuilder extends Component {
 
     handleDiscountClick = () => this.setState(prevState => ({ discount: { ...prevState.discount, applied: true } }));
 
-    handleOrderSubmit = () => this.setState(prevState => ({ orderConfirmed: !prevState.orderConfirmed }));
+    handleOrderSubmit = () => {
+        this.setState(prevState => (
+            { orderConfirmed: !prevState.orderConfirmed }
+        ), () => {
+            this.state.orderConfirmed ?
+                this.closeConfirmationBtnRef.current.focus() :
+                this.confirmOrderBtnRef.current.focus();
+        })
+    };
 
     render() {
         return (
@@ -115,11 +126,19 @@ class PizzaBuilder extends Component {
                             selectedToppings={ this.state.selectedToppings }
                             totalPrice={ ((this.state.basePrice + (this.state.toppingPrice * this.state.selectedToppings.length)) / 100).toFixed(2) }
                             discount={ this.state.discount }
+                            confirmOrderBtnRef={ this.confirmOrderBtnRef }
                             handleDiscountInput={ this.handleDiscountInput }
                             handleDiscountClick={ this.handleDiscountClick }
                             handleOrderSubmit={ this.handleOrderSubmit }
                         />
-                        { this.state.orderConfirmed ? <OrderConfirmation handleOrderSubmit={ this.handleOrderSubmit } /> : null }
+                        {
+                            this.state.orderConfirmed ?
+                                <OrderConfirmation
+                                    handleOrderSubmit={ this.handleOrderSubmit }
+                                    closeConfirmationBtnRef={ this.closeConfirmationBtnRef }
+                                />
+                                : null
+                        }
                     </div>
                 </main>
             </Fragment>

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function OrderDetails({ selectedToppings, totalPrice, discount, handleDiscountInput, handleDiscountClick, handleOrderSubmit }) {
+function OrderDetails({ selectedToppings, totalPrice, discount, confirmOrderBtnRef, handleDiscountInput, handleDiscountClick, handleOrderSubmit }) {
 
     const validDiscount = Object.keys(discount.codes).includes(discount.userCode);
 
@@ -41,7 +41,14 @@ function OrderDetails({ selectedToppings, totalPrice, discount, handleDiscountIn
                     { `$${discount.applied && validDiscount ?
                         (totalPrice - (totalPrice * (discount.codes[discount.userCode] / 100))).toFixed(2) :
                         totalPrice}` }</p>
-                <button className='btn order-btn' onClick={ handleOrderSubmit } aria-label='Confirm Order'>Order</button>
+                <button
+                    className='btn order-btn'
+                    onClick={ handleOrderSubmit }
+                    aria-label='Confirm Order'
+                    ref={ confirmOrderBtnRef }
+                >
+                    Order
+                </button>
             </div>
         </div>
     );
