@@ -13,9 +13,9 @@ function ToppingSelect({ toppingOptions, toppingPrice, handleToppingOptionClick 
                 <li><ToppingIcon iconType={ 'hot' } /> Hot & Spicy</li>
             </ul>
             <p className='toppings-info'>Toppings charged at { `$${toppingPrice}` } each.</p>
-            <div className='topping-options' onClick={ handleToppingOptionClick }>
+            <ul className='topping-options' onClick={ handleToppingOptionClick }>
                 { toppingOptions.map(topping => <ToppingOption key={ topping[0] } topping={ topping[0] } toppingIcons={ topping[1].icons } />) }
-            </div>
+            </ul>
         </div >
     );
 }

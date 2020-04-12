@@ -4,7 +4,7 @@ import ToppingIcon from './ToppingIcon.js';
 
 function ToppingOption({ topping, toppingIcons }) {
     return (
-        <div className='topping-option'>
+        <li className='topping-option'>
             <input type='checkbox' id={ topping } className='topping-input' />
             <label className='topping-label' htmlFor={ topping } aria-label={ `${topping} (${toppingIcons.map(icon => icon)})` }>
                 <div className='topping-image'>
@@ -19,7 +19,7 @@ function ToppingOption({ topping, toppingIcons }) {
                     </span>
                 </span>
             </label>
-        </div>
+        </li>
     );
 }
 
