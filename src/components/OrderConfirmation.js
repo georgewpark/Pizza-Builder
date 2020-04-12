@@ -7,7 +7,7 @@ function OrderConfirmation({ handleOrderSubmit }) {
             <div className='order-modal'>
                 <h2>Order Confirmed</h2>
                 <p>Your pizza will be with you shortly!</p>
-                <button className='btn close-btn' onClick={ handleOrderSubmit } autoFocus >Close</button>
+                <button className='btn close-btn' onClick={ handleOrderSubmit } aria-label="Close Confirmation" autoFocus >Close</button>
             </div>
         </div>
     );
