@@ -24,14 +24,16 @@ function OrderDetails({ selectedToppings, totalPrice, discount, handleDiscountIn
                     value={ discount.userCode }
                     maxLength='10'
                     onChange={ handleDiscountInput }
-                    aria-label="Discount Code"
+                    aria-label='Discount Code'
+                    aria-describedby='discount-message'
+                    aria-invalid={ discount.applied && !validDiscount }
                 />
                 { discount.applied ?
                     (validDiscount ?
-                        <p className='discount-message valid'>Valid Code: { discount.codes[discount.userCode] }% Off</p> :
-                        <p className='discount-message invalid'>Invalid Code</p>)
+                        <p id='discount-message' className='discount-message valid' role='alert'>Valid Code: { discount.codes[discount.userCode] }% Off</p> :
+                        <p className='discount-message invalid' role='alert'>Invalid Code</p>)
                     : null }
-                <button className='btn discount-btn' onClick={ handleDiscountClick }>Apply</button>
+                <button className='btn discount-btn' onClick={ handleDiscountClick } aria-label='Apply Discount'>Apply</button>
             </div>
             <div className='order-price'>
                 <h3>Total Price:</h3>
@@ -39,7 +41,7 @@ function OrderDetails({ selectedToppings, totalPrice, discount, handleDiscountIn
                     { `$${discount.applied && validDiscount ?
                         (totalPrice - (totalPrice * (discount.codes[discount.userCode] / 100))).toFixed(2) :
                         totalPrice}` }</p>
-                <button className='btn order-btn' onClick={ handleOrderSubmit }>Order</button>
+                <button className='btn order-btn' onClick={ handleOrderSubmit } aria-label='Confirm Order'>Order</button>
             </div>
         </div>
     );
