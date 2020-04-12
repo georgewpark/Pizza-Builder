@@ -17,7 +17,15 @@ function OrderDetails({ selectedToppings, totalPrice, discount, handleDiscountIn
             </div>
             <div className='order-discount'>
                 <h3>Discount Code:</h3>
-                <input type='text' className='discount-input' spellCheck='false' value={ discount.userCode } maxLength='10' onChange={ handleDiscountInput } />
+                <input
+                    type='text'
+                    className='discount-input'
+                    spellCheck='false'
+                    value={ discount.userCode }
+                    maxLength='10'
+                    onChange={ handleDiscountInput }
+                    aria-label="Discount Code"
+                />
                 { discount.applied ?
                     (validDiscount ?
                         <p className='discount-message valid'>Valid Code: { discount.codes[discount.userCode] }% Off</p> :
