@@ -45,9 +45,11 @@ function OrderDetails({ selectedToppings, totalPrice, discount, confirmOrderBtnR
             <div className='order-price'>
                 <h3>Total Price:</h3>
                 <p className='price'>
-                    { `$${discount.applied && validDiscount ?
-                        (totalPrice - (totalPrice * (discount.codes[discount.userCode] / 100))).toFixed(2) :
-                        totalPrice}` }</p>
+                    {
+                        `$${discount.applied && validDiscount ?
+                            (totalPrice - (totalPrice * (discount.codes[discount.userCode] / 100))).toFixed(2) : totalPrice}`
+                    }
+                </p>
                 <button
                     className='btn order-btn'
                     onClick={ handleOrderSubmit }
