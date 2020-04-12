@@ -13,7 +13,8 @@
 body {
     --red: #ce442c;
     --blue: #0e447a;
-    --green: #5ab302;
+    --light-blue: #1b558e;
+    --green: #428302;
     --white: #fcfcfc;
     --shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
               0 3px 6px rgba(0, 0, 0, 0.23);
@@ -101,25 +102,29 @@ h3 {
 }
 
 .toppings-info li {
-    margin-bottom: 8px;
+    margin-bottom: 6px;
+}
+
+.topping-option {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.topping-option:last-of-type {
+    margin-bottom: 0;
 }
 
 .topping-label {
     position: relative;
     display: block;
     font-size: 20px;
-    min-width: 325px;
     border-radius: 5px;
     border: 2px solid var(--blue);
-    padding: 20px 0 20px 80px;
-    margin-bottom: 20px;
+    padding: 20px 60px 20px 80px;
     cursor: pointer;
     user-select: none;
     text-transform: capitalize;
-}
-
-.topping-label:last-of-type {
-    margin-bottom: 0;
+    overflow: hidden;
 }
 
 .topping-image {
@@ -131,6 +136,7 @@ h3 {
     left: 0;
     height: 100%;
     width: 62.5px;
+    background-color: var(--white);
     border-right: 2px solid var(--blue);
 }
 
@@ -160,6 +166,18 @@ h3 {
     display: none;
 }
 
+.topping-label-content {
+    white-space: nowrap
+}
+
+.topping-label-text {
+    margin-right: 10px;
+}
+
+.topping-label-icons {
+    white-space: nowrap
+}
+
 .topping-input {
     position: absolute;
     top: 50%;
@@ -171,11 +189,16 @@ h3 {
     background-color: var(--white);
     margin: 0;
     transform: translateY(-50%);
+    z-index: 1;
     -webkit-appearance: none;
 }
 
 .topping-input:checked {
     background-color: var(--white);
+}
+
+.topping-input:checked:focus {
+    outline-color: var(--white);
 }
 
 .topping-input:checked::after {
@@ -191,15 +214,22 @@ h3 {
     animation: scaleUp 120ms linear forwards;
 }
 
+.topping-input:checked + .topping-label {
+    color: var(--white);
+    background-color: var(--light-blue);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+
 .topping-icon {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 22px;
-    height: 22px;
+    width: 25px;
+    height: 25px;
     font-size: 15px;
     font-weight: 700;
     color: var(--white);
+    border: 2px solid var(--white);
     border-radius: 50%;
     margin-right: 5px;
     text-shadow: 0.05em 0.05em 0.05em rgba(0, 0, 0, 0.4);
@@ -218,12 +248,11 @@ h3 {
 }
 
 .topping-label .topping-icon {
-    margin-left: 5px;
-    margin-right: 0;
+    margin-right: 3px;
 }
 
-.topping-label .topping-icon:first-of-type {
-    margin-left: 10px;
+.topping-label .topping-icon:last-of-type {
+    margin-right: 0;
 }
 
 /* Pizza */
@@ -386,6 +415,23 @@ h3 {
 
     .order-toppings li {
         flex-grow: 0;
+    }
+}
+
+@media (max-width: 500px) {
+    .topping-label {
+        font-size: 16px;
+        padding: 15px 45px 15px 65px;
+    }
+
+    .topping-input {
+        width: 25px;
+        height: 25px;
+        right: 15px;
+    }
+
+    .topping-image {
+        width: 55px;
     }
 }
 

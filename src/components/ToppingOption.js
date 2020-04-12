@@ -4,13 +4,22 @@ import ToppingIcon from './ToppingIcon.js';
 
 function ToppingOption({ topping, toppingIcons }) {
     return (
-        <label className='topping-label'>
-            <div className='topping-image'>
-                <div className={ `${topping} topping-image-item` }></div>
-            </div>
-            <span>{ topping }{ toppingIcons.map(icon => <ToppingIcon key={ icon } iconType={ icon } />) }</span>
+        <div className="topping-option">
             <input type='checkbox' id={ topping } className='topping-input' />
-        </label>
+            <label className='topping-label' htmlFor={ topping }>
+                <div className='topping-image'>
+                    <div className={ `${topping} topping-image-item` }></div>
+                </div>
+                <span className='topping-label-content'>
+                    <span className='topping-label-text'>
+                        { topping }
+                    </span>
+                    <span className='topping-label-icons'>
+                        { toppingIcons.map(icon => <ToppingIcon key={ icon } iconType={ icon } />) }
+                    </span>
+                </span>
+            </label>
+        </div>
     );
 }
 
