@@ -6,7 +6,7 @@ function ToppingOption({ topping, toppingIcons }) {
     return (
         <div className="topping-option">
             <input type='checkbox' id={ topping } className='topping-input' />
-            <label className='topping-label' htmlFor={ topping }>
+            <label className='topping-label' htmlFor={ topping } aria-label={ `${topping} (${toppingIcons.map(icon => icon)})` }>
                 <div className='topping-image'>
                     <div className={ `${topping} topping-image-item` }></div>
                 </div>
