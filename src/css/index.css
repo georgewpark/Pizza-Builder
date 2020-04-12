@@ -338,12 +338,12 @@ h3 {
     margin-bottom: 10px;
 }
 
-.discount-message.valid {
+.discount-message--valid {
     color: #0d270c;
     background-color: #79ce76;
 }
 
-.discount-message.invalid {
+.discount-message--invalid {
     color: #270c0c;
     background-color: #ce7676;
 }

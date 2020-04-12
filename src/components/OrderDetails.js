@@ -28,11 +28,18 @@ function OrderDetails({ selectedToppings, totalPrice, discount, confirmOrderBtnR
                     aria-describedby='discount-message'
                     aria-invalid={ discount.applied && !validDiscount }
                 />
-                { discount.applied ?
-                    (validDiscount ?
-                        <p id='discount-message' className='discount-message valid' role='alert'>Valid Code: { discount.codes[discount.userCode] }% Off</p> :
-                        <p className='discount-message invalid' role='alert'>Invalid Code</p>)
-                    : null }
+                {
+                    discount.applied ?
+                        (validDiscount ?
+                            <p id='discount-message' className='discount-message discount-message--valid' role='alert'>
+                                Valid Code: { discount.codes[discount.userCode] }% Off
+                            </p>
+                            :
+                            <p id='discount-message' className='discount-message discount-message--invalid' role='alert'>
+                                Invalid Code
+                            </p>)
+                        : null
+                }
                 <button className='btn discount-btn' onClick={ handleDiscountClick } aria-label='Apply Discount'>Apply</button>
             </div>
             <div className='order-price'>
