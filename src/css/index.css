@@ -190,6 +190,7 @@ h3 {
     margin: 0;
     transform: translateY(-50%);
     z-index: 1;
+    cursor: pointer;
     -webkit-appearance: none;
 }
 
