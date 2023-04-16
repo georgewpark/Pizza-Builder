@@ -13,9 +13,9 @@ const PizzaBuilder = () => {
         <PizzaProvider>
           <BrowserRouter>
             <Routes>
-              <Route path='/' element={<Builder />}></Route>
-              <Route path='*' element={<Builder />}></Route>
-              <Route path='/confirmation' element={<Confirmation />}></Route>
+              <Route path='/' element={<Builder />} />
+              <Route path='*' element={<Builder />} />
+              <Route path='/confirmation' element={<Confirmation />} />
             </Routes>
           </BrowserRouter>
         </PizzaProvider>
