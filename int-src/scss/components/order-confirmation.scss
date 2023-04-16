@@ -1,0 +1,10 @@
+.order-confirmation {
+  grid-column: 1 / -1;
+  text-align: center;
+
+  &__icon {
+    width: 5rem;
+    margin-bottom: 0.5rem;
+    fill: var(--black);
+  }
+}

@@ -1,2 +1,5 @@
-/node_modules
-/build
+/.tmp.drivedownload
+/.tmp.driveupload
+node_modules/
+int-dist/
+*.txt

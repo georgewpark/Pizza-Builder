@@ -1,0 +1,218 @@
+.pizza-options {
+  grid-row: 1 / -1;
+
+  &__size {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 1.25rem;
+
+    &-input {
+      appearance: none;
+      font-family: inherit;
+      font-size: 1rem;
+      line-height: 1.2;
+      text-transform: capitalize;
+      background-color: transparent;
+      border-radius: 0.3125rem;
+      border: 0.125rem solid var(--blue);
+      padding: 0.625rem 2.1875rem 0.625rem 0.5rem;
+      cursor: pointer;
+    }
+
+    &-icon {
+      position: absolute;
+      top: 50%;
+      right: 0.625rem;
+      width: 1.25rem;
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+  }
+
+  &__details {
+    font-size: 1rem;
+    margin-bottom: 1.25rem;
+
+    li {
+      margin-bottom: 0.375rem;
+    }
+  }
+
+  &__toppings {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  &__topping {
+    position: relative;
+
+    &-label {
+      font-size: 1rem;
+      padding: 0 2.8125rem 0 3.75rem;
+      position: relative;
+      display: flex;
+      align-items: center;
+      height: 3.25rem;
+      border-radius: 0.3125rem;
+      border: 0.125rem solid var(--blue);
+      cursor: pointer;
+      user-select: none;
+      text-transform: capitalize;
+      overflow: hidden;
+
+      &-content {
+        display: flex;
+        align-items: center;
+        white-space: nowrap
+      }
+
+      &-text {
+        margin-right: 0.625rem;
+      }
+
+      &-icons {
+        white-space: nowrap
+      }
+
+      .pizza-options__topping-icon {
+        margin-right: 0.1875rem;
+
+        &:last-of-type {
+          margin-right: 0;
+        }
+      }
+    }
+
+    &-input {
+      appearance: none;
+      position: absolute;
+      top: 50%;
+      width: 1.5625rem;
+      height: 1.5625rem;
+      right: 0.9375rem;
+      background-color: var(--white);
+      border: 0.125rem solid var(--blue);
+      border-radius: 0.3125rem;
+      margin: 0;
+      transform: translateY(-50%);
+      z-index: 1;
+      cursor: pointer;
+
+      &:checked {
+        background-color: var(--white);
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 70%;
+          height: 70%;
+          border-radius: 50%;
+          background-image: radial-gradient(circle, var(--light-blue), var(--blue));
+          transform: translate(-50%, -50%) scale(0);
+          animation: scaleUp 100ms linear forwards;
+        }
+
+        &+.pizza-options__topping-label {
+          color: var(--white);
+          background-color: var(--mid-blue);
+          text-shadow: 0.0625rem 0.0625rem 0.125rem rgba(0, 0, 0, 0.4);
+        }
+      }
+    }
+
+    &-image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      aspect-ratio: 1;
+      background-color: var(--white);
+      border-right: 0.125rem solid var(--blue);
+
+      div {
+        width: 70%;
+        height: 70%;
+        border: 0.125rem solid rgba(0, 0, 0, 0.1);
+      }
+
+      & .onions,
+      & .peppers,
+      & .chicken {
+        width: 25%;
+        border: none;
+        transform: rotate(30deg);
+      }
+
+      & .mushrooms {
+        position: relative;
+        height: 45%;
+        border: none;
+        transform: translateY(-0.5rem);
+      }
+
+      & .jalapenos::before,
+      & .jalapenos::after {
+        display: none;
+      }
+    }
+
+    &-icon {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 1.5625rem;
+      height: 1.5625rem;
+      font-size: 0.9375rem;
+      font-weight: 700;
+      color: var(--white);
+      border: 0.125rem solid var(--white);
+      border-radius: 50%;
+      margin-right: 0.3125rem;
+      text-shadow: 0.05em 0.05em 0.05em rgba(0, 0, 0, 0.4);
+
+      &--vegetarian {
+        background-color: var(--green);
+      }
+
+      &--gluten {
+        background-color: var(--blue);
+      }
+
+      &--hot {
+        background-color: var(--red);
+      }
+    }
+  }
+
+  @media (min-width: 720px) {
+    &__size {
+      &-input {
+        font-size: 1.25rem;
+      }
+    }
+
+    &__toppings {
+      gap: 1.25rem;
+    }
+
+    &__topping {
+      &-label {
+        font-size: 1.25rem;
+        height: 3.875rem;
+        padding: 0 3.75rem 0 4.375rem;
+      }
+
+      &-input {
+        right: 1.125rem;
+        width: 1.875rem;
+        height: 1.875rem;
+      }
+    }
+  }
+}
