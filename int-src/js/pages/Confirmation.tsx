@@ -14,6 +14,8 @@ const Confirmation = () => {
   useEffect(() => {
     if (!orderConfirmed) {
       navigate('/')
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   }, [])
 

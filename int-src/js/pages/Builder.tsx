@@ -11,6 +11,8 @@ const Builder = () => {
   useEffect(() => {
     if (orderConfirmed) {
       setOrderConfirmed(false)
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   }, [])
 
