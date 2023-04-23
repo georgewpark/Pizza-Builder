@@ -65,7 +65,7 @@
       &-content {
         display: flex;
         align-items: center;
-        white-space: nowrap
+        white-space: nowrap;
       }
 
       &-text {
@@ -73,7 +73,7 @@
       }
 
       &-icons {
-        white-space: nowrap
+        white-space: nowrap;
       }
 
       .pizza-options__topping-icon {
@@ -111,12 +111,16 @@
           width: 70%;
           height: 70%;
           border-radius: 50%;
-          background-image: radial-gradient(circle, var(--light-blue), var(--blue));
+          background-image: radial-gradient(
+            circle,
+            var(--light-blue),
+            var(--blue)
+          );
           transform: translate(-50%, -50%) scale(0);
           animation: scaleUp 100ms linear forwards;
         }
 
-        &+.pizza-options__topping-label {
+        & + .pizza-options__topping-label {
           color: var(--white);
           background-color: var(--mid-blue);
           text-shadow: 0.0625rem 0.0625rem 0.125rem rgba(0, 0, 0, 0.4);

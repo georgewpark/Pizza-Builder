@@ -12,7 +12,7 @@ const Builder = () => {
     if (orderConfirmed) {
       setOrderConfirmed(false)
     } else {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.scrollTo({ top: 0, behavior: 'smooth' })
     }
   }, [])
 
@@ -21,7 +21,7 @@ const Builder = () => {
       <PizzaOptions />
       <Pizza />
       <OrderDetails />
-    </Layout >
+    </Layout>
   )
 }
 

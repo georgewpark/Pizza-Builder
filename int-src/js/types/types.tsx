@@ -4,12 +4,12 @@ export type DiscountCode = {
 
 export type Size = {
   [key: string]: {
-    basePrice: number,
+    basePrice: number
     inches: number
   }
 }
 
 export type Topping = {
-  icons: string[],
+  icons: string[]
   amount: number
 }
