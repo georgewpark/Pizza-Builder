@@ -6,7 +6,7 @@ A 'create your own' style visual pizza builder using React.
 
 ## Live Demo
 
-A live demo is available on [CodePen](https://cdpn.io/xeGmmP) and [Netlify](https://react-pizza-builder.netlify.com/).
+A live demo is available on [CodePen](https://cdpn.io/xeGmmP) and [Netlify](https://react-pizza-builder.netlify.app/).
 
 ## License
 
