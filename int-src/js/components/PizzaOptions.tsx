@@ -9,7 +9,7 @@ const PizzaOptions = () => {
     selectedSize,
     setSelectedSize,
     toppingPrice,
-    toppingOptions,
+    toppingOptions
   } = useContext(PizzaContext)
 
   return (

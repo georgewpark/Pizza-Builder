@@ -20,7 +20,7 @@ const ToppingOption = ({ topping, toppingIcons }: ToppingOptionProps) => {
       // Add topping
       setSelectedToppings(prevSelectedToppings => [
         ...prevSelectedToppings,
-        selectedTopping,
+        selectedTopping
       ])
     }
   }

@@ -3,7 +3,7 @@ import {
   createContext,
   ReactNode,
   Dispatch,
-  SetStateAction,
+  SetStateAction
 } from 'react'
 import { DiscountCode, Size, Topping } from '../types/types'
 
@@ -41,63 +41,63 @@ export const PizzaProvider = ({ children }: PizzaProviderProps) => {
   const sizeOptions: Size = {
     small: {
       basePrice: 800,
-      inches: 9.5,
+      inches: 9.5
     },
     medium: {
       basePrice: 1000,
-      inches: 11.5,
+      inches: 11.5
     },
     large: {
       basePrice: 1200,
-      inches: 13.5,
-    },
+      inches: 13.5
+    }
   }
 
   const toppingOptions: { [key: string]: Topping } = {
     pepperoni: {
       icons: ['gluten free'],
-      amount: 12,
+      amount: 12
     },
     bacon: {
       icons: ['gluten free'],
-      amount: 13,
+      amount: 13
     },
     ham: {
       icons: ['gluten free'],
-      amount: 14,
+      amount: 14
     },
     sausage: {
       icons: [],
-      amount: 13,
+      amount: 13
     },
     chicken: {
       icons: ['gluten free'],
-      amount: 14,
+      amount: 14
     },
     onions: {
       icons: ['vegetarian', 'gluten free'],
-      amount: 15,
+      amount: 15
     },
     peppers: {
       icons: ['vegetarian', 'gluten free'],
-      amount: 15,
+      amount: 15
     },
     mushrooms: {
       icons: ['vegetarian', 'gluten free'],
-      amount: 22,
+      amount: 22
     },
     pineapple: {
       icons: ['vegetarian', 'gluten free'],
-      amount: 16,
+      amount: 16
     },
     olives: {
       icons: ['vegetarian', 'gluten free'],
-      amount: 19,
+      amount: 19
     },
     jalapenos: {
       icons: ['vegetarian', 'gluten free', 'hot'],
-      amount: 19,
-    },
+      amount: 19
+    }
   }
 
   const discountCodes: DiscountCode = {
@@ -108,7 +108,7 @@ export const PizzaProvider = ({ children }: PizzaProviderProps) => {
     javascript: 15,
     pizza: 40,
     react: 35,
-    typescript: 5,
+    typescript: 5
   }
 
   const toppingPrice = 150
@@ -138,7 +138,7 @@ export const PizzaProvider = ({ children }: PizzaProviderProps) => {
         setDiscountApplied,
         totalPrice,
         orderConfirmed,
-        setOrderConfirmed,
+        setOrderConfirmed
       }}
     >
       {children}

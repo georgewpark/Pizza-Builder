@@ -14,7 +14,7 @@ const OrderDetails = () => {
     setDiscountApplied,
     totalPrice,
     orderConfirmed,
-    setOrderConfirmed,
+    setOrderConfirmed
   } = useContext(PizzaContext)
 
   const navigate = useNavigate()
