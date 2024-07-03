@@ -6,18 +6,18 @@ const TerserPlugin = require('terser-webpack-plugin')
 
 module.exports = {
   entry: {
-    app: path.resolve(__dirname, 'int-src/index.js'),
+    app: path.resolve(__dirname, 'int-src/index.js')
   },
   output: {
     path: path.resolve(__dirname, 'int-dist'),
     filename: 'js/[name].js',
-    clean: true,
+    clean: true
   },
   devServer: {
     port: 3000,
     open: true,
     hot: true,
-    historyApiFallback: true,
+    historyApiFallback: true
   },
   module: {
     rules: [
@@ -25,12 +25,9 @@ module.exports = {
         test: /\.html$/,
         use: [
           {
-            loader: 'html-loader',
-            options: {
-              interpolate: true,
-            },
-          },
-        ],
+            loader: 'html-loader'
+          }
+        ]
       },
       {
         test: /\.scss$/,
@@ -45,15 +42,15 @@ module.exports = {
                   [
                     'postcss-preset-env',
                     {
-                      browsers: 'last 2 versions',
-                    },
-                  ],
-                ],
-              },
-            },
+                      browsers: 'last 2 versions'
+                    }
+                  ]
+                ]
+              }
+            }
           },
-          'sass-loader',
-        ],
+          'sass-loader'
+        ]
       },
       {
         test: /\.(js|ts)x?$/,
@@ -64,27 +61,26 @@ module.exports = {
             presets: [
               '@babel/preset-env',
               ['@babel/preset-react', { runtime: 'automatic' }],
-              '@babel/preset-typescript',
-            ],
-          },
-        },
-      },
-    ],
+              '@babel/preset-typescript'
+            ]
+          }
+        }
+      }
+    ]
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.jsx', '.js'],
+    extensions: ['.tsx', '.ts', '.jsx', '.js']
   },
   optimization: {
-    minimizer: [new TerserPlugin(), new CssMinimizerPlugin()],
+    minimizer: [new TerserPlugin(), new CssMinimizerPlugin()]
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'css/[name].css',
+      filename: 'css/[name].css'
     }),
     new HtmlWebpackPlugin({
       template: 'int-src/html/index.html',
-      minify: false,
-      hash: true,
-    }),
-  ],
+      hash: true
+    })
+  ]
 }

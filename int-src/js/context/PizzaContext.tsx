@@ -1,9 +1,9 @@
 import {
-  useState,
   createContext,
-  ReactNode,
   Dispatch,
-  SetStateAction
+  ReactNode,
+  SetStateAction,
+  useState
 } from 'react'
 import { DiscountCode, Size, Topping } from '../types/types'
 

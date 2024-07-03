@@ -1,9 +1,9 @@
-import { useEffect, useContext } from 'react'
-import PizzaContext from '../context/PizzaContext'
-import PizzaOptions from '../components/PizzaOptions'
+import { useContext, useEffect } from 'react'
 import Layout from '../components/Layout'
-import Pizza from '../components/Pizza'
 import OrderDetails from '../components/OrderDetails'
+import Pizza from '../components/Pizza'
+import PizzaOptions from '../components/PizzaOptions'
+import PizzaContext from '../context/PizzaContext'
 
 const Builder = () => {
   const { orderConfirmed, setOrderConfirmed } = useContext(PizzaContext)

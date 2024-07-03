@@ -1,10 +1,10 @@
-import { useEffect, useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import PizzaContext from '../context/PizzaContext'
 import Layout from '../components/Layout'
-import Pizza from '../components/Pizza'
-import OrderDetails from '../components/OrderDetails'
 import OrderConfirmation from '../components/OrderConfirmation'
+import OrderDetails from '../components/OrderDetails'
+import Pizza from '../components/Pizza'
+import PizzaContext from '../context/PizzaContext'
 
 const Confirmation = () => {
   const { orderConfirmed } = useContext(PizzaContext)

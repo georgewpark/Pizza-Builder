@@ -1,8 +1,8 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Header from '../components/Header'
 import { PizzaProvider } from '../context/PizzaContext'
 import Builder from './Builder'
 import Confirmation from './Confirmation'
-import Header from '../components/Header'
 
 const PizzaBuilder = () => {
   return (
