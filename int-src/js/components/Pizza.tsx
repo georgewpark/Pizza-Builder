@@ -1,10 +1,10 @@
 import { useContext } from 'react'
 import PizzaContext from '../context/PizzaContext'
+import { toppingOptions } from '../data/PizzaData'
 import PizzaTopping from './PizzaTopping'
 
 const Pizza = () => {
-  const { selectedSize, toppingOptions, selectedToppings } =
-    useContext(PizzaContext)
+  const { selectedSize, selectedToppings } = useContext(PizzaContext)
 
   return (
     <div className='pizza panel'>

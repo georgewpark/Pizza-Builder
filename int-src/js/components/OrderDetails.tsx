@@ -1,25 +1,38 @@
-import { KeyboardEvent, useContext } from 'react'
+import { KeyboardEvent, useContext, useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
 import PizzaContext from '../context/PizzaContext'
+import { discountCodes, sizeOptions, toppingPrice } from '../data/PizzaData'
 
 const OrderDetails = () => {
   const {
-    sizeOptions,
     selectedSize,
     selectedToppings,
-    discountCodes,
     discountCode,
     setDiscountCode,
     discountApplied,
     setDiscountApplied,
-    totalPrice,
     orderConfirmed,
     setOrderConfirmed
   } = useContext(PizzaContext)
 
   const navigate = useNavigate()
 
-  const discountValid = Object.keys(discountCodes).includes(discountCode)
+  const discountValid = useMemo(
+    () => Object.keys(discountCodes).includes(discountCode),
+    [discountCode]
+  )
+
+  const totalPrice = useMemo(
+    () =>
+      parseFloat(
+        (
+          (sizeOptions[selectedSize].basePrice +
+            toppingPrice * selectedToppings.length) /
+          100
+        ).toFixed(2)
+      ),
+    [selectedSize, selectedToppings]
+  )
 
   const handleDiscountInput = (value: string) => {
     setDiscountCode(value.trim().toLowerCase())

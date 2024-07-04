@@ -1,16 +1,11 @@
 import { useContext } from 'react'
 import PizzaContext from '../context/PizzaContext'
+import { sizeOptions, toppingOptions, toppingPrice } from '../data/PizzaData'
 import ToppingIcon from './ToppingIcon'
 import ToppingOption from './ToppingOption'
 
 const PizzaOptions = () => {
-  const {
-    sizeOptions,
-    selectedSize,
-    setSelectedSize,
-    toppingPrice,
-    toppingOptions
-  } = useContext(PizzaContext)
+  const { selectedSize, setSelectedSize } = useContext(PizzaContext)
 
   return (
     <section className='pizza-options panel' aria-label='pizza options'>
