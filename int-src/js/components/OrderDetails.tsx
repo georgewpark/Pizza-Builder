@@ -86,7 +86,7 @@ const OrderDetails = () => {
             </>
           )
         ) : (
-          <>
+          <div aria-live='polite'>
             <h3>Discount Code</h3>
             <input
               type='text'
@@ -105,7 +105,6 @@ const OrderDetails = () => {
                 <p
                   id='discount-message'
                   className='order-details__discount-message order-details__discount-message--valid'
-                  role='alert'
                 >
                   Valid Code: {discountCodes[discountCode]}% Off
                 </p>
@@ -113,7 +112,6 @@ const OrderDetails = () => {
                 <p
                   id='discount-message'
                   className='order-details__discount-message order-details__discount-message--invalid'
-                  role='alert'
                 >
                   Invalid Code
                 </p>
@@ -128,7 +126,7 @@ const OrderDetails = () => {
                 Apply
               </button>
             )}
-          </>
+          </div>
         )}
       </div>
       <div className='order-details__price'>
